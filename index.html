@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>龍善寺 公式WEBサイト リニューアルワイヤー</title>
+  <style>
+    :root {
+      --ink: #222222;
+      --text: #3a3a3a;
+      --muted: #737066;
+      --line: #ded8c9;
+      --paper: #fffdfa;
+      --soft: #f4f0e7;
+      --soft-green: #e7f0cc;
+      --brown: #4d4122;
+      --brown-2: #5c5133;
+      --green: #70910c;
+      --green-dark: #003c08;
+      --red: #800307;
+      --gold: #ca9e59;
+      --shadow: 0 18px 40px rgba(41, 34, 17, .08);
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--paper);
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      background: var(--brown);
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .top-strip__inner,
+    .header__inner,
+    .nav__inner,
+    .section__inner,
+    .footer__inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .top-strip__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 5px 0;
+    }
+
+    .header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 22px 0 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 250px;
+    }
+
+    .brand__mark {
+      width: 84px;
+      height: 84px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: grid;
+      place-items: center;
+      color: var(--brown);
+      font-family: "Noto Serif JP", serif;
+      font-size: 30px;
+      letter-spacing: .08em;
+    }
+
+    .brand__name {
+      margin: 0;
+      color: var(--brown);
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .brand__sub {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tel {
+      color: var(--brown);
+      font-family: "Noto Serif JP", serif;
+      font-size: 26px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 600;
+      line-height: 1.3;
+      border: 1px solid var(--red);
+    }
+
+    .btn--gold {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn--outline {
+      background: #fff;
+      color: var(--brown);
+      border-color: var(--brown);
+    }
+
+    .btn--green {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--brown-2);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+    }
+
+    .nav__inner {
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav a {
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+      padding: 0 18px;
+      font-family: "Noto Serif JP", serif;
+      font-size: 15px;
+      border-left: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .nav a:last-child {
+      border-right: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 500px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background: #2f2816;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(35, 28, 13, .76), rgba(35, 28, 13, .34) 52%, rgba(35, 28, 13, .08)),
+        url("https://www.waseda-ryuzenji.or.jp/img/visual/img3.jpg") center / cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero__inner {
+      position: relative;
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      padding: 64px 0 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #f4e5bd;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero h2 {
+      max-width: 720px;
+      margin: 0;
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .hero__lead {
+      max-width: 660px;
+      margin: 24px 0 0;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .visit-card {
+      position: absolute;
+      right: 0;
+      bottom: 42px;
+      width: 318px;
+      padding: 22px;
+      background: rgba(255, 253, 250, .95);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .visit-card h3 {
+      margin: 0 0 12px;
+      color: var(--brown);
+      font-family: "Noto Serif JP", serif;
+      font-size: 20px;
+    }
+
+    .visit-card dl {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 8px 12px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .visit-card dt {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .visit-card dd {
+      margin: 0;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section--soft {
+      background: var(--soft);
+    }
+
+    .section--green {
+      background: var(--soft-green);
+    }
+
+    .section__head {
+      display: grid;
+      gap: 12px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .label {
+      color: var(--green-dark);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    h2,
+    h3 {
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      color: var(--brown);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .section__head h2 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    .section__head p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 48% 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .split__image,
+    .image-card {
+      overflow: hidden;
+      background: #ddd;
+      box-shadow: var(--shadow);
+    }
+
+    .split__image img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .split__body h3 {
+      margin: 0 0 18px;
+      font-size: 30px;
+    }
+
+    .split__body p {
+      margin: 0 0 22px;
+    }
+
+    .wire-note {
+      display: inline-flex;
+      margin-top: 22px;
+      padding: 8px 12px;
+      background: #fff;
+      color: var(--green-dark);
+      border: 1px dashed var(--green);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .news-layout {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .panel__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel__head h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .wp-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      background: var(--soft-green);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-list li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      padding: 18px 28px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .news-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .news-list time {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .news-list p {
+      margin: 0;
+    }
+
+    .today-word {
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      padding: 42px 30px;
+      background:
+        linear-gradient(rgba(255, 255, 255, .88), rgba(255, 255, 255, .88)),
+        var(--soft);
+      text-align: center;
+    }
+
+    .today-word p {
+      margin: 0;
+      color: var(--brown);
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 30px;
+      line-height: 1.9;
+      writing-mode: vertical-rl;
+      max-height: 330px;
+    }
+
+    .today-word small {
+      display: block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .card__body {
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 23px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .service {
+      padding: 32px 28px;
+      border-right: 1px solid var(--line);
+    }
+
+    .service:last-child {
+      border-right: 0;
+    }
+
+    .service img {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      margin-bottom: 22px;
+    }
+
+    .service h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .service ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .service li {
+      padding: 8px 0;
+      border-top: 1px dashed var(--line);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      align-items: center;
+      gap: 18px;
+      min-height: 78px;
+      padding: 18px 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .faq-item__icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      background: var(--brown);
+      color: #fff;
+      font-family: "Noto Serif JP", serif;
+      font-size: 22px;
+    }
+
+    .faq-item h3 {
+      margin: 0;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .access-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .access-layout iframe {
+      width: 100%;
+      min-height: 430px;
+      border: 0;
+      display: block;
+    }
+
+    .access-info {
+      padding: 44px;
+    }
+
+    .access-info h3 {
+      margin: 0 0 18px;
+      font-size: 26px;
+    }
+
+    .access-info dl {
+      margin: 26px 0 0;
+      padding: 0;
+    }
+
+    .access-info dt {
+      margin-top: 20px;
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .access-info dd {
+      margin: 6px 0 0;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .template {
+      padding: 30px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .template h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .template ol {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    .template li {
+      margin: 8px 0;
+    }
+
+    .cta-band {
+      background: var(--brown);
+      color: #fff;
+    }
+
+    .cta-band .section__inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .cta-band h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 30px;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: #e4dfd6;
+    }
+
+    .cta-band__actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer {
+      background: #2f2816;
+      color: #e4dfd6;
+      padding: 46px 0 28px;
+    }
+
+    .footer__inner {
+      display: grid;
+      gap: 32px;
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    .footer-nav h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .footer-nav p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .16);
+      font-size: 13px;
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .header__inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .header-cta {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav__inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+
+      .nav a {
+        flex: 0 0 auto;
+      }
+
+      .visit-card {
+        position: static;
+        margin-top: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 66px;
+        font-size: 15px;
+      }
+
+      .top-strip__inner,
+      .header__inner,
+      .nav__inner,
+      .section__inner,
+      .footer__inner,
+      .hero__inner {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .top-strip__inner {
+        display: block;
+      }
+
+      .top-strip__inner span:last-child {
+        display: none;
+      }
+
+      .header__inner {
+        padding: 16px 0;
+      }
+
+      .brand__mark {
+        width: 58px;
+        height: 58px;
+        font-size: 22px;
+      }
+
+      .brand__name {
+        font-size: 23px;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav {
+        position: relative;
+      }
+
+      .nav a {
+        min-height: 50px;
+        padding: 0 14px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(35, 28, 13, .82), rgba(35, 28, 13, .34)),
+          url("https://www.waseda-ryuzenji.or.jp/img/visual/img3.jpg") center / cover no-repeat;
+      }
+
+      .hero__inner {
+        padding: 76px 0 26px;
+      }
+
+      .hero h2 {
+        font-size: 29px;
+      }
+
+      .hero__lead {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .hero__actions,
+      .cta-band__actions {
+        flex-direction: column;
+      }
+
+      .visit-card {
+        width: 100%;
+        margin-top: 24px;
+        padding: 16px;
+      }
+
+      .visit-card h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .visit-card dl {
+        grid-template-columns: 70px 1fr;
+        gap: 6px 10px;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section__head {
+        margin-bottom: 34px;
+      }
+
+      .section__head h2 {
+        font-size: 26px;
+      }
+
+      .split,
+      .news-layout,
+      .access-layout,
+      .template-grid,
+      .cta-band .section__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .service-grid,
+      .footer-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        gap: 18px;
+      }
+
+      .service {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service:last-child {
+        border-bottom: 0;
+      }
+
+      .news-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 16px 20px;
+      }
+
+      .panel__head {
+        padding: 20px;
+      }
+
+      .today-word {
+        min-height: 340px;
+      }
+
+      .today-word p {
+        font-size: 24px;
+      }
+
+      .access-info {
+        padding: 30px 22px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .mobile-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, .16);
+      }
+
+      .mobile-cta a {
+        min-height: 66px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .mobile-cta a:first-child {
+        background: var(--green-dark);
+      }
+
+      .mobile-cta a:last-child {
+        background: var(--red);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">
+    <div class="top-strip__inner">
+      <span>浄土真宗・真宗大谷派お東の龍善寺</span>
+      <span>早稲田駅 徒歩1〜2分 / 東京都新宿区早稲田町77番地</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark">龍善寺</span>
+        <span>
+          <h1 class="brand__name">真宗大谷派 龍善寺</h1>
+          <p class="brand__sub">本山 京都東本願寺 / 早稲田のお寺</p>
+        </span>
+      </a>
+      <div class="header-cta">
+        <a class="tel" href="tel:0332094709">03-3209-4709</a>
+        <a class="btn btn--outline" href="#visit">参拝時間</a>
+        <a class="btn" href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="主要ナビゲーション">
+    <div class="nav__inner">
+      <a href="#">龍善寺について</a>
+      <a href="#">本尊・本堂</a>
+      <a href="#">お墓・納骨堂</a>
+      <a href="#">ご門徒様へ</a>
+      <a href="#">よくある質問</a>
+      <a href="#">アクセス</a>
+      <a href="#">門徒マイページ</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="visit">
+      <div class="hero__inner">
+        <p class="eyebrow">江戸時代初め1638年創建</p>
+        <h2>早稲田のまちに開かれた、浄土真宗 真宗大谷派のお寺</h2>
+        <p class="hero__lead">龍善寺の由緒、本尊・本堂、葬儀・法事、お墓・納骨堂の情報を、PC/SP共通のページ構成でわかりやすく整理します。</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="#about">龍善寺について</a>
+          <a class="btn btn--green" href="#grave">お墓・納骨堂を見る</a>
+        </div>
+        <aside class="visit-card">
+          <h3>参拝時間</h3>
+          <dl>
+            <dt>納骨堂</dt>
+            <dd>平日 9:00〜17:00<br>予約時は平日18:45まで</dd>
+            <dt>休日</dt>
+            <dd>9:00〜17:00</dd>
+            <dt>墓地</dt>
+            <dd>日の出〜日没</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section__inner">
+        <div class="split">
+          <div class="split__image">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_content_img.jpg" alt="龍善寺外観">
+          </div>
+          <div class="split__body">
+            <span class="label">ABOUT</span>
+            <h3>龍善寺について</h3>
+            <p>創建の歴史、宗派、本尊、早稲田という立地を冒頭で簡潔に伝え、寺院としての信頼感をつくる導入エリアです。現行トップの長文は読みやすい段落に分け、詳細ページへ送ります。</p>
+            <a class="btn btn--outline" href="#">詳しく見る</a>
+            <span class="wire-note">SEO想定: 「浄土真宗 真宗大谷派 早稲田」「龍善寺」を自然に含める</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section__inner">
+        <div class="news-layout">
+          <div class="panel">
+            <div class="panel__head">
+              <h3>新着情報</h3>
+              <span class="wp-badge">WordPress更新</span>
+            </div>
+            <ul class="news-list">
+              <li>
+                <time>2026.6.14</time>
+                <p>ご門徒様へを更新しました / 次回法話会のお知らせ</p>
+              </li>
+              <li>
+                <time>2026.4.16</time>
+                <p>ご門徒様へを更新しました / 次回法話会のお知らせ</p>
+              </li>
+              <li>
+                <time>2026.2.19</time>
+                <p>ご門徒様へを更新しました / 次回法話会のお知らせ</p>
+              </li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="panel__head">
+              <h3>今日の言葉</h3>
+              <span class="wp-badge">WordPress更新</span>
+            </div>
+            <div class="today-word">
+              <div>
+                <p>念仏は<br>悩みをなくす<br>術ではない<br>悩んでいける<br>道である</p>
+                <small>東京教区伝道掲示ポスターより</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <div class="section__head">
+          <span class="label">TEMPLE</span>
+          <h2>本尊・本堂について</h2>
+          <p>現行サイトの3要素をカード化し、画像の大きさと余白は早稲田納骨堂サイト寄りにゆったり見せます。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_img01.jpg" alt="本尊 阿弥陀如来像">
+            <div class="card__body">
+              <h3>本尊 阿弥陀如来像</h3>
+              <p>約800年前の鎌倉時代初期の作と伝わる本尊を紹介。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_img02.jpg" alt="新本堂">
+            <div class="card__body">
+              <h3>新本堂</h3>
+              <p>本堂・客殿・納骨堂ロビーを含む施設概要へ誘導。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_img03.jpg" alt="西本堂">
+            <div class="card__body">
+              <h3>西本堂</h3>
+              <p>法要や収容人数など、利用者が知りたい情報を整理。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="grave">
+      <div class="section__inner">
+        <div class="section__head">
+          <span class="label">GRAVE / OSSUARY</span>
+          <h2>お墓・納骨堂について</h2>
+          <p>価格更新が入りやすい領域は、テーブルやカードを共通部品化する想定です。現行の比較表はSPで読みにくくなるため、まずカードで入口を作ります。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_img04.jpg" alt="早稲田納骨堂">
+            <h3>早稲田納骨堂</h3>
+            <p>屋内・個室参拝・永代供養付きの納骨堂。専用サイトへも自然に送客。</p>
+            <ul>
+              <li>価格・参拝方法</li>
+              <li>施設紹介</li>
+              <li>見学予約導線</li>
+            </ul>
+          </article>
+          <article class="service">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_img05.jpg" alt="龍善寺墓地">
+            <h3>龍善寺墓地</h3>
+            <p>都心でお参りしやすい区画墓地。費用や入檀条件を明確に掲載。</p>
+            <ul>
+              <li>区画・費用</li>
+              <li>管理について</li>
+              <li>石材店情報</li>
+            </ul>
+          </article>
+          <article class="service">
+            <img src="https://www.waseda-ryuzenji.or.jp/img/top_img06.jpg" alt="早稲田永代供養墓">
+            <h3>早稲田永代供養墓</h3>
+            <p>龍善寺住職が日々お参りする永代供養墓。合葬・費用を整理。</p>
+            <ul>
+              <li>埋葬方法</li>
+              <li>生前予約</li>
+              <li>管理費</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <div class="section__head">
+          <span class="label">FAQ</span>
+          <h2>よくある質問</h2>
+          <p>FAQはWordPress投稿をカテゴリ別に表示し、構造化データ化しやすいQ&A形式に寄せます。</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item">
+            <span class="faq-item__icon">Q</span>
+            <h3>何時から何時までお参りできますか？</h3>
+          </article>
+          <article class="faq-item">
+            <span class="faq-item__icon">Q</span>
+            <h3>お寺に納めるお布施の包み紙には何と書けばよいのでしょうか？</h3>
+          </article>
+          <article class="faq-item">
+            <span class="faq-item__icon">Q</span>
+            <h3>お布施はいつ渡せばよいのでしょうか？</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--green">
+      <div class="section__inner">
+        <div class="section__head">
+          <span class="label">ACCESS</span>
+          <h2>アクセス</h2>
+          <p>早稲田駅徒歩1〜2分の強みをトップ下部でも明確に出します。</p>
+        </div>
+        <div class="access-layout">
+          <iframe loading="lazy" title="龍善寺周辺地図" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12959.31868393662!2d139.7234048!3d35.7058089!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe44b2b39ddccee65!2z6b6N5ZaE5a-6!5e0!3m2!1sja!2sjp!4v1609258646659!5m2!1sja!2sjp"></iframe>
+          <div class="access-info">
+            <h3>浄土真宗 真宗大谷派 龍善寺</h3>
+            <p>〒162-0042 東京都新宿区早稲田町77番地<br>TEL 03-3209-4709</p>
+            <dl>
+              <dt>東京メトロ東西線</dt>
+              <dd>早稲田駅より徒歩1〜2分 / 外苑東通り方面出口1を出て左へ100m</dd>
+              <dt>お車でお越しの方</dt>
+              <dd>首都高速道路「早稲田」出口より約2分。駐車場情報は詳細ページへ掲載。</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section__inner">
+        <div class="section__head">
+          <span class="label">PAGE TEMPLATE</span>
+          <h2>下層ページ共通ワイヤー</h2>
+          <p>PC/SP別ファイルを統合し、固定ページとWordPress投稿を同じヘッダー・フッター・CTAで管理する想定です。</p>
+        </div>
+        <div class="template-grid">
+          <article class="template">
+            <h3>固定ページ型</h3>
+            <ol>
+              <li>ページ見出し / パンくず</li>
+              <li>導入文とメイン画像</li>
+              <li>本文ブロック / 比較表 / CTA</li>
+              <li>関連ページ導線</li>
+            </ol>
+          </article>
+          <article class="template">
+            <h3>WordPress投稿型</h3>
+            <ol>
+              <li>一覧: 日付・カテゴリ・タイトル・抜粋</li>
+              <li>詳細: 本文・前後記事・関連FAQ</li>
+              <li>カテゴリ: FAQ / ご門徒様へ / 今日の言葉</li>
+              <li>SEO: title/description/構造化データ</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="contact">
+      <div class="section__inner">
+        <div>
+          <h2>お問い合わせ</h2>
+          <p>電話・メール・参拝時間への導線を全ページ共通で設置します。</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="btn btn--gold" href="tel:0332094709">03-3209-4709</a>
+          <a class="btn" href="#">メールでのお問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer-nav">
+        <section>
+          <h3>龍善寺について</h3>
+          <p>概要と歩み<br>葬儀のご案内<br>相続ポイント還元制度</p>
+        </section>
+        <section>
+          <h3>本尊・本堂</h3>
+          <p>本尊 阿弥陀如来像<br>新本堂<br>客殿・駐車場</p>
+        </section>
+        <section>
+          <h3>お墓・納骨堂</h3>
+          <p>早稲田納骨堂<br>龍善寺墓地<br>永代供養墓</p>
+        </section>
+        <section>
+          <h3>WordPress</h3>
+          <p>ご門徒様へ<br>今日の言葉<br>よくある質問</p>
+        </section>
+        <section>
+          <h3>ご案内</h3>
+          <p>アクセス<br>お問い合わせ<br>プライバシーポリシー</p>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <span>真宗大谷派 龍善寺 / 東京都新宿区早稲田町77番地</span>
+        <span>Copyright(c) 浄土真宗 真宗大谷派 龍善寺</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="スマートフォン固定CTA">
+    <a href="tel:0332094709">電話</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</body>
+</html>
