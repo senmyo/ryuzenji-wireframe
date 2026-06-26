@@ -23,7 +23,6 @@
 
     body {
       margin: 0;
-      padding-top: 36px;
       color: var(--text);
       background: var(--bg);
       font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
@@ -34,30 +33,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    .wireframe-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      height: 36px;
-      padding: 0 18px;
-      background: #fff;
-      border-bottom: 1px solid var(--line-dark);
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-    }
-
-    .wireframe-bar .badge {
-      padding: 2px 8px;
-      border: 1px solid var(--line-dark);
-      font-weight: 700;
-      letter-spacing: .04em;
     }
 
     .wrap {
@@ -73,18 +48,6 @@
 
     .section:nth-child(even) {
       background: var(--bg-soft);
-    }
-
-    .section-label {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      padding: 3px 9px;
-      border: 1px solid var(--line-dark);
-      background: #fff;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      line-height: 1.4;
     }
 
     .placeholder {
@@ -140,7 +103,7 @@
 
     .header {
       position: sticky;
-      top: 36px;
+      top: 0;
       z-index: 100;
       background: #fff;
       border-bottom: 1px solid var(--line-dark);
@@ -296,15 +259,6 @@
       max-width: 760px;
       margin: 0 auto 44px;
       text-align: center;
-    }
-
-    .section-head .en {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--sub);
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: .12em;
     }
 
     .section-head h2 {
@@ -705,12 +659,6 @@
   </style>
 </head>
 <body>
-  <div class="wireframe-bar">
-    <span class="badge">WIREFRAME</span>
-    <span>龍善寺 公式WEBサイト リニューアル案</span>
-    <span>/ top page / responsive</span>
-  </div>
-
   <header class="header">
     <div class="header-inner">
       <a class="logo" href="#">
@@ -742,7 +690,6 @@
 
   <main>
     <section class="hero" id="visit">
-      <span class="section-label">FV / first view</span>
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">江戸時代初め1638年創建</p>
@@ -769,12 +716,10 @@
     </section>
 
     <section class="section" id="about">
-      <span class="section-label">ABOUT</span>
       <div class="wrap">
         <div class="split">
           <div class="placeholder">画像枠：龍善寺外観</div>
           <div>
-            <p class="eyebrow">ABOUT</p>
             <h3>龍善寺について</h3>
             <p>龍善寺は江戸時代初め1638年に創建されました。宗派は、親鸞聖人を宗祖とする真宗（浄土真宗）大谷派（いわゆる「お東」）であり、本山は京都・東本願寺になります。当寺は早稲田通りに面し、東京メトロ東西線「早稲田」駅から徒歩1〜2分の交通至便の地にあります。</p>
             <div class="button-row">
@@ -786,7 +731,6 @@
     </section>
 
     <section class="section">
-      <span class="section-label">NEWS / WORDS</span>
       <div class="wrap">
         <div class="two-column">
           <div class="panel">
@@ -824,10 +768,8 @@
     </section>
 
     <section class="section">
-      <span class="section-label">TEMPLE</span>
       <div class="wrap">
         <div class="section-head">
-          <span class="en">TEMPLE</span>
           <h2>本尊・本堂について</h2>
           <p>当寺の本尊として上宮寺より移した阿弥陀如来の立像は、800年前の鎌倉時代の作と言われております。新本堂には西本堂・東本堂・1階本堂の3つの本堂と客殿をご用意しております。</p>
         </div>
@@ -836,14 +778,14 @@
             <div class="placeholder placeholder--small">画像枠：本尊 阿弥陀如来像</div>
             <div class="card-body">
               <h3>本尊 阿弥陀如来像</h3>
-              <p>約800年前の鎌倉時代初期の作と伝わる本尊を紹介。</p>
+              <p>上宮寺の本尊を江戸でもご開帳してほしいという声に応えて、その本尊をご開帳する寺として龍善寺は建立されました。</p>
             </div>
           </article>
           <article class="card">
             <div class="placeholder placeholder--small">画像枠：新本堂</div>
             <div class="card-body">
               <h3>新本堂</h3>
-              <p>本堂・客殿・納骨堂ロビーを含む施設概要へ誘導。</p>
+              <p>2012年12月に新本堂が完成し、早稲田納骨堂もグランドオープンを迎えました。3つの本堂と客殿を6部屋ご用意しております。</p>
             </div>
           </article>
           <article class="card">
@@ -858,10 +800,8 @@
     </section>
 
     <section class="section">
-      <span class="section-label">GRAVE / OSSUARY</span>
       <div class="wrap">
         <div class="section-head">
-          <span class="en">GRAVE / OSSUARY</span>
           <h2>お墓・納骨堂について</h2>
           <p>閑静な東京23区内の早稲田の墓地のご案内です。過去の宗派を問わず、お墓をご提供いたします。</p>
         </div>
@@ -870,10 +810,10 @@
             <div class="placeholder placeholder--small">画像枠：早稲田納骨堂</div>
             <div class="service-body">
               <h3>早稲田納骨堂</h3>
-              <p>屋内・個室参拝・永代供養付きの納骨堂。専用サイトへも自然に送客。</p>
+              <p>これまでのお墓のイメージを一新する新しいコンセプトの納骨堂です。屋内の納骨室でしか実現できない空間がここにあります。</p>
               <ul>
                 <li>価格・参拝方法</li>
-                <li>施設紹介</li>
+                <li>施設のご案内</li>
                 <li>見学予約導線</li>
               </ul>
             </div>
@@ -882,7 +822,7 @@
             <div class="placeholder placeholder--small">画像枠：龍善寺墓地</div>
             <div class="service-body">
               <h3>龍善寺墓地</h3>
-              <p>都心でお参りしやすい区画墓地。費用や入檀条件を明確に掲載。</p>
+              <p>過去の宗派を問わず、23区内の絶好の立地なので、郊外に出かけることなく都心にお住まいの方でも気軽にお参りすることができる区画墓地です。</p>
               <ul>
                 <li>区画・費用</li>
                 <li>管理について</li>
@@ -907,10 +847,8 @@
     </section>
 
     <section class="section">
-      <span class="section-label">FAQ</span>
       <div class="wrap">
         <div class="section-head">
-          <span class="en">FAQ</span>
           <h2>よくある質問</h2>
           <p>こちらでは、皆様の気になる疑問に対してお答えをさせていただいております。また当寺への疑問などにもお答えをしております。</p>
         </div>
@@ -932,10 +870,8 @@
     </section>
 
     <section class="section">
-      <span class="section-label">ACCESS</span>
       <div class="wrap">
         <div class="section-head">
-          <span class="en">ACCESS</span>
           <h2>アクセス</h2>
           <p>龍善寺のある早稲田町の西に位置する西早稲田には、大隈重信が創設した早稲田大学があります。龍善寺のすぐ裏手には鶴巻南公園があり、憩いの場として親しまれています。</p>
         </div>
@@ -948,7 +884,7 @@
               <dt>東京メトロ東西線</dt>
               <dd>早稲田駅より徒歩1〜2分 / 外苑東通り方面出口1を出て左へ100m</dd>
               <dt>お車でお越しの方</dt>
-              <dd>首都高速道路「早稲田」出口より約2分。駐車場情報は詳細ページへ掲載。</dd>
+              <dd>早稲田出口を直進し弁天町交差点を右折400m右側です。駐車場、早稲田通り沿いのパーキングメーターもご利用ください。</dd>
             </dl>
           </div>
         </div>
@@ -956,7 +892,6 @@
     </section>
 
     <section class="cta" id="contact">
-      <span class="section-label">CONTACT</span>
       <div class="wrap cta-inner">
         <div>
           <h2>お問い合わせ</h2>
